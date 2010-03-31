@@ -1,3 +1,3 @@
 require 'init'
 
-run Sinatra::Application
+run Mibo::App
