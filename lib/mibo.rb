@@ -17,7 +17,7 @@ module Mibo
     end
     
     get '/' do
-      @posts = Post.all
+      @posts = Post.all( :order => '_id DESC')
       erb :'posts/index'
     end
     
