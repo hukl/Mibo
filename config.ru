@@ -1,9 +1,8 @@
 require 'init'
-use Rack::Session::Cookie
+use Rack::Session::Cookie, :secret => 'Wh@teverfl0atsYourB23oat'
+enable :method_override
 
 map "/" do 
-  enable :sessions
-  
   use Warden::Manager do |manager|
     manager.default_strategies :password
     manager.failure_app = Account::App
@@ -13,9 +12,6 @@ map "/" do
 end
 
 map "/account" do
-  
-  enable :sessions
-  
   use Warden::Manager do |manager|
     manager.default_strategies :password
     manager.failure_app = Account::App
@@ -25,9 +21,6 @@ map "/account" do
 end
 
 map "/admin" do
-  
-  enable :sessions
-  
   use Warden::Manager do |manager|
     manager.default_strategies :password
     manager.failure_app = Account::App
