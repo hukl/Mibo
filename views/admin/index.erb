@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Published</th>
+    <th>Actions</th>
+  </tr>
+  <% @posts.each do |post| %>
+  <tr>
+    <td><%= post.title %></td>
+    <td><%= Time.now.to_s(:db) %></td>
+    <td>
+      <a href="/admin/posts/<%= post.id %>/edit">Edit</a>
+    </td>
+  </tr>
+  <% end %>
+</table>
