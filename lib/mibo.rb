@@ -21,6 +21,11 @@ module Mibo
       erb :'posts/index'
     end
     
+    get '/:id' do
+      @post = Post.find( params[:id] )
+      erb :'posts/show'
+    end
+    
     
   end
   

@@ -2,7 +2,9 @@
 
 <% @posts.each do |post| %>
 <div>
-  <h2><%= post.title %></h2>
+  <h2>
+    <a href="/<%= post.id %>"><%= post.title %></a>
+  </h2>
   <div>
     <%= textilize( post.body ) %>
   </div>
