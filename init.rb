@@ -3,13 +3,19 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "lib"))
 
 require 'rubygems'
 require 'sinatra'
-require 'mongo_mapper'
 require 'warden'
+require 'mongo_mapper'
 require 'erb'
 require 'RedCloth'
 require 'less'
 require 'mibo'
+require 'authorization'
+require 'account'
+require 'user'
 require 'post'
+require 'admin'
+
+enable :sessions
 
 # Configure MongoMapper
 
