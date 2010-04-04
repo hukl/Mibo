@@ -1,0 +1,6 @@
+<h3>Do you really want to delete this post?</h3>
+
+<form method="post" action="/admin/posts/<%= @post.id %>">
+  <input name="_method" value="delete" type="hidden" />
+  <input type="submit" value="Delete" />
+</form>

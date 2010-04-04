@@ -10,6 +10,7 @@
     <td><%= Time.now.to_s(:db) %></td>
     <td>
       <a href="/admin/posts/<%= post.id %>/edit">Edit</a>
+      <a href="/admin/posts/<%= post.id %>/delete">Delete</a>
     </td>
   </tr>
   <% end %>
