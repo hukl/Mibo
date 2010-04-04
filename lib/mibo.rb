@@ -21,8 +21,8 @@ module Mibo
       erb :'posts/index'
     end
     
-    get '/:id' do
-      @post = Post.find( params[:id] )
+    get  %r{/([a-z0-9]+)/?$} do |id|
+      @post = Post.find( id )
       erb :'posts/show'
     end
     
