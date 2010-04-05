@@ -8,7 +8,7 @@
   
   <body>
     <p>
-      User: <%= env['warden'].user.name if env['warden'].user %>
+      User: <%= env['warden'].user.user_name if env['warden'].user %>
     </p>
     <%= yield %>
   </body>

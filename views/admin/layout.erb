@@ -9,7 +9,7 @@
   <body>
     <h1>Admin Interface</h1>
     <p>
-      User: <%= env['warden'].user.name if env['warden'].user %>
+      User: <%= env['warden'].user.user_name if env['warden'].user %>
     </p>
     <div id="admin_menu">
       <a href="/admin/posts/new">New Post</a>

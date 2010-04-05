@@ -1,11 +1,24 @@
 class User
   
-  attr_accessor :id, :name
+  include MongoMapper::Document
+  include BCrypt
+  
+  key :user_name
+  key :email
+  key :password_hash
+  
+  def password
+    @password ||= Password.new(password_hash)
+  end
+  
+  def password=(new_password)
+    @password = Password.create(new_password)
+    self.password_hash = @password
+  end
   
   def self.authenticate email, password
-    if email == "foo@bar.com" && password == "password"
-      user = self.new
-      user.id = 1
+    user = User.find_by_email( email )
+    if user && user.password == password
       user
     else
       nil
@@ -13,9 +26,7 @@ class User
   end
   
   def self.get id
-    user = self.new
-    user.id = 1
-    user.name = "Bert"
+    user = User.find( id )
     user
   end
   
