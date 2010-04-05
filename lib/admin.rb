@@ -2,8 +2,6 @@ module Admin
   
   class App < Sinatra::Base
     
-    set :method_override, true
-    
     before do
       redirect '/account/login' unless env['warden'].user
     end
@@ -52,6 +50,7 @@ module Admin
         erb :'admin/edit', :layout => :'admin/layout'
       end
     end
+    
   end
   
 end
