@@ -16,6 +16,15 @@ require 'user'
 require 'post'
 require 'admin'
 
-# Configure MongoMapper
 
-MongoMapper.database = 'mibo'
+configure :production do
+  MongoMapper.database = 'mibo'
+end
+
+configure :development do
+  MongoMapper.database = 'mibo'
+end
+
+configure :test do
+  MongoMapper.database = 'mibo_test'
+end
