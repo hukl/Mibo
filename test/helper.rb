@@ -1,7 +1,10 @@
 require 'test/unit'
 require 'rack/test'
-require 'init'
+require 'sinatra'
 
+set :environment, :test
+
+require 'init'
 
 class Test::Unit::TestCase
   unless defined?(Spec)
