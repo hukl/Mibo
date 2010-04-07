@@ -7,6 +7,11 @@ set :environment, :test
 require 'init'
 
 class Test::Unit::TestCase
+  
+  def app
+    @app ||= Rack::Server.new.app
+  end
+  
   unless defined?(Spec)
     # test "verify something" do
     #   ...

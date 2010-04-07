@@ -5,9 +5,6 @@ require 'helper'
 class MiboTest < Test::Unit::TestCase
   include Rack::Test::Methods
   
-  def app
-    Mibo::App
-  end
     
   test "index page should render successfully" do
     get '/'
