@@ -37,8 +37,8 @@ module Admin
     
     delete '/posts/:id' do
       post = Post.find( params[:id] )
-      post.delete #if post
-      post.inspect
+      post.delete if post
+      redirect '/admin'
     end
     
     put '/posts/:id/?' do
