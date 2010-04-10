@@ -1,0 +1,26 @@
+@textcolor: #606060;
+@textsize: 12px;
+
+body {
+  font-family: Helvetica;
+  color: @textcolor;
+}
+
+input[type=text], textarea {
+  width: 500px;
+  border: 1px solid @textcolor;
+}
+
+textarea {
+  height: 400px;
+}
+
+tr td {
+  padding: 3px;
+  vertical-align: top;
+  font-size: @textsize;
+}
+
+tr td:first-child {
+  padding-right: 10px;
+}

@@ -16,6 +16,11 @@ module Mibo
       less :stylesheet
     end
     
+    get '/css/admin.css' do
+      content_type 'text/css', :charset => 'utf-8'
+      less :admin_stylesheet
+    end
+    
     get '/' do
       @posts = Post.all( :order => '_id DESC')
       erb :'posts/index'
