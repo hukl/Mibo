@@ -21,8 +21,8 @@ module Mibo
       erb :'posts/index'
     end
     
-    get  %r{/([a-z0-9]+)/?$} do |id|
-      @post = Post.find( id )
+    get %r{/([a-z0-9\-]+)/?$} do |slug|
+      @post = Post.find_by_slug( slug )
       erb :'posts/show'
     end
     

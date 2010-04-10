@@ -11,4 +11,10 @@ class MiboTest < Test::Unit::TestCase
     assert_equal 200, last_response.status, "Wasn't a 200"
   end
   
+  test "show a post" do
+    post = Post.create :title => "My first post", :body => "Me"
+    get '/my-first-post'
+    assert_equal 200, last_response.status, "Wasn't a 200"
+  end
+  
 end
