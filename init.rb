@@ -28,3 +28,16 @@ end
 configure :test do
   MongoMapper.database = 'mibo_test'
 end
+
+# TODO remove if fix is available
+module ActiveSupport
+  module Inflector
+    # Calling String#parameterize prints a warning under Ruby 1.9,
+    # even if the data in the string doesn't need transliterating.
+    # Maybe Rails 3 will have fixed it...?
+    undef_method :transliterate
+    def transliterate(string)
+      string.dup
+    end
+  end
+end
