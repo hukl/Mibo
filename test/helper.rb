@@ -29,4 +29,18 @@ class Test::Unit::TestCase
       end
     end
   end
+  
+  def assert_difference(expression, difference = 1, message = nil, &block)
+    b = block.send(:binding)
+    exps = Array.wrap(expression)
+    before = exps.map { |e| eval(e, b) }
+  
+    yield
+  
+    exps.each_with_index do |e, i|
+      error = "#{e.inspect} didn't change by #{difference}"
+      error = "#{message}.\n#{error}" if message
+      assert_equal(before[i] + difference, eval(e, b), error)
+    end
+  end
 end
