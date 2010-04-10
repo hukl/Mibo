@@ -1,6 +1,6 @@
 # encoding: UTF-8
 
-$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "."))
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), ".."))
 require 'helper'
 
 class PostTest < Test::Unit::TestCase
