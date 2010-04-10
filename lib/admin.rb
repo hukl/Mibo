@@ -13,7 +13,7 @@ module Admin
     
     get '/posts/new/?' do
       @post = Post.new params[:post]
-      erb :'admin/new', :layout => :'admin/new'
+      erb :'admin/new', :layout => :'admin/layout'
     end
     
     post '/posts/?' do
@@ -21,7 +21,7 @@ module Admin
       if @post.save
         redirect '/admin'
       else
-        erb :'admin/new', :layout => :'admin/new'
+        erb :'admin/new', :layout => :'admin/layout'
       end
     end
     

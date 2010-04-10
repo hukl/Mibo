@@ -1,17 +1,3 @@
-<form method="post" action="/admin/posts">
-  <table>
-    <tr>
-      <td>Title:</td>
-      <td><input type="text" name="post[title]" id="post_title" /></td>
-    </tr>
-    <tr>
-      <td>Body:</td>
-      <td><textarea name="post[body]" rows="8" cols="40" /></textarea></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td><input type="submit" /></td>
-    </tr>
-  </table>
-    
-</form>
+<h2>New Post</h2>
+
+<%= erb(:'admin/form', :layout => false) %>

@@ -1,0 +1,22 @@
+<form method="post" action="/admin/posts/<%= @post.id %>/">
+  <input name="_method" value="put" type="hidden" />
+  <table>
+    <tr>
+      <td>Title:</td>
+      <td><input type="text" name="post[title]" id="post_title" value="<%= @post.title %>" /></td>
+    </tr>
+    <tr>
+      <td>Tags</td>
+      <td><input type="text" name="post[tags]" id="post_title" value="<%= @post.tags.join(", ") %>"/></td>
+    </tr>
+    <tr>
+      <td>Body:</td>
+      <td><textarea name="post[body]" rows="8" cols="40"><%= @post.body %></textarea></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="submit" /></td>
+    </tr>
+  </table>
+    
+</form>
