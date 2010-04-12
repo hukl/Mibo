@@ -9,7 +9,7 @@ require 'init'
 class Test::Unit::TestCase
   
   def app
-    @app ||= Rack::Server.new.app
+    @app ||= Rack::Cascade.new( Rack::Builder.parse_file( "config.ru" ) )
   end
   
   unless defined?(Spec)
