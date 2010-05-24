@@ -16,7 +16,7 @@ module Admin
       erb :'admin/new', :layout => :'admin/layout'
     end
     
-    post '/posts/?' do
+    post '/posts/' do
       @post = Post.new params[:post]
       if @post.save
         redirect '/admin'
@@ -41,8 +41,8 @@ module Admin
       redirect '/admin'
     end
     
-    put '/posts/:id/?' do
-      @post = Post.find( params[:id] )
+    put  %r{/posts/([a-z0-9\-]+)/?$} do |id|
+      @post = Post.find( id )
       
       if @post.update_attributes( params[:post] )
         redirect '/admin/'

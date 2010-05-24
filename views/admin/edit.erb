@@ -1,3 +1,6 @@
 <h2>Edit Post</h2>
 
-<%= erb(:'admin/form', :layout => false) %>
+<form method="post" action="/admin/posts/<%= @post.id %>">
+  <input name="_method" value="put" type="hidden" />
+  <%= erb(:'admin/form', :layout => false) %>
+</form>
