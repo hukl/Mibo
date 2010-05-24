@@ -28,7 +28,11 @@ module Mibo
     
     get %r{/([a-z0-9\-]+)/?$} do |slug|
       @post = Post.find_by_slug( slug )
-      erb :'posts/show'
+      if @post
+        erb :'posts/show'
+      else
+        halt 404, "Not Found"
+      end
     end
     
     
